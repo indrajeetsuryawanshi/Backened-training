@@ -20,11 +20,61 @@ router.get('/test-me', function (req, res) {
 })
     router.get('/movies/:indexNumber', function (req, res){
         let movies=["pushpa " ,"dhoom", "wanted"]
-        const index=[ " "," "," "]
-        
-      const moviesin=index()
-      const till=moviesin+1
- console.log(till)
+        console.log(req.params.indexNumber)
+    let movieIndex = req.params.indexNumber
+    //check index value. less than 0 or greater than array (length - 1) are not valid
+    if(movieIndex<0 || movieIndex>=movies.length) {
+        //if the index is invalid send an error message
+        return res.send('The index value is not correct, Please check the it')
+    }
+
+    //if the index was valid send the movie at that index in response
+    let requiredMovie = movies[movieIndex]
+    res.send(requiredMovie)
+})
+
+router.get("/films", function(req, res){
+    const films = [ {
+        "id": 1,
+        "name": "pushpa"
+       }, {
+        "id": 2,
+        "name": "dhoom"
+       }, {
+        "id": 3,
+        "name": "wanted "
+       }]
+       //send all the films
+      res.send(films)
+    })
+    router.get("/films/:filmId", function(req, res){
+        const films = [ {
+            "id": 1,
+            "name": "pushpa"
+           }, {
+            "id": 2,
+            "name": "dhoom"
+           }, {
+            "id": 3,
+            "name": "wanted"
+           }]
+    
+           let filmId = req.params.filmId
+    
+           //iterate all the films
+           //search for a film whose id matches with the id recevied in request
+           for(let i = 0; i < films.length; i++){
+               let film = films[i]
+               if(film.id == filmId) {
+                   //if there is a match return the response from here
+                   return res.send(film)
+               }
+           }
+    
+           //if there is no match give an error response
+           res.send("The film id doesn't match any movie")
+    })
+
         // const inmovie =[]
         // const mm= inmovie+1
 
@@ -33,9 +83,9 @@ router.get('/test-me', function (req, res) {
         // let moviesName = requestParams.name
         // console.log('Name of the movies is ', moviesName)
         
-        res.send('Dummy response')
+        // res.send('Dummy response')
 
-})
+// })
 
 // router.get('/student-details/:name', function(req, res){
     /*
