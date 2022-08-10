@@ -18,6 +18,7 @@ router.get("/sol1",  function (req, res) {
     res.send( {data: missingnumber} );
     })
 
+    
     // 
         router.get("/sol2", function (req, res) {
         let arr= [33, 34, 35, 37, 38]
