@@ -26,7 +26,7 @@ router.get("/sol1",  function (req, res) {
  
    let total = 0;
    for (var i in arr) {
-       total += arr[i];
+       total = total+ arr[i];
    }
  
    let firstDigit= arr[0]
