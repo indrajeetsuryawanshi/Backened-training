@@ -4,6 +4,9 @@ const underscore = require('underscore')
 
 const router = express.Router();
 
+
+
+
 router.get("/sol1",  function (req, res) {
     let arr=[1,2,3,5,6,7]
     let total=0
@@ -36,8 +39,16 @@ router.get("/sol1",  function (req, res) {
   
    res.send(  { data: missingNumber  }  );
  });
-
-
-
+//  router.get("/movies/:indexNumber", function(req, res){
+//     let movies=[ "mela", "sairat", "dabang"]
+//       let indexNumber    =req.params.indexNumber
+//       for (let i=0 ; i<movies.length;i++){
+//        let indexNumber= movies[i]
+//          }   if (movies==indexNumber){
+//         res.send(movies)
+//        }
+//               res.send("the movie not exist")
+//        })
+    dd
 module.exports = router;
 // adding this comment for no reason
