@@ -1,17 +1,17 @@
-const athorbook=require("../author/bookauthor.js")
+const authorbook=require("../author/bookauthor.js")
 
 
 
-const bookathor= async  function(req,res){
+const bookauthor= async  function(req,res){
     let data= req.body
-    let saveData=await athorbook.create(data)
+    let saveData=await authorbook.create(data)
     res.send({msg:saveData})
 }
  const getbooklist= async  function(req , res){
-    let booklist = await athorbook.find()
+    let booklist = await authorbook.find()
     res.send({msg:booklist})
 }
 
 
-module.exports.bookathor=bookathor
+module.exports.bookauthor=bookauthor
 module.exports.getbooklist=getbooklist
