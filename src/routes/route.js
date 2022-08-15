@@ -67,43 +67,98 @@ const router = express.Router();
 //     arr.push(ele)
 //     res.send(  { msg: arr , status: true }  )
 // })
-let players=
-[{ 
-    "name": "indrajeet",
-    "dob" : "13/02/2000",
-     'age': "23",
-     "gender": "male"
-} ,{
-    "name": "sanket",
-    "dob" : "28/07/2000",
-     'age': "22",
-     "gender": "male"
-},{
-     "name": "saurav",
-     "dob" : "28/4/2000",
-      'age': "22",
-      "gender": "male"
+// let players=
+// [{ 
+//     "name": "indrajeet",
+//     "dob" : "13/02/2000",
+//      'age': "23",
+//      "gender": "male"
+// } ,{
+//     "name": "sanket",
+//     "dob" : "28/07/2000",
+//      'age': "22",
+//      "gender": "male"
+// },{
+//      "name": "saurav",
+//      "dob" : "28/4/2000",
+//       'age': "22",
+//       "gender": "male"
 
 
-}]
-router.post("/players", function(req, res) {
-    // let players=[]
-    let newplayer=req.body
-    let nameofnewplayer =newplayer.name
-    let isreapeatedname= false
-for (let i=0;i<players.length;i++){
-    if(players[i].name==nameofnewplayer){
-    isreapeatedname = true;
-   break;
+// }]
+// router.post("/players", function(req, res) {
+//     // let players=[]
+//     let newplayer=req.body
+//     let nameofnewplayer =newplayer.name
+//     let isreapeatedname= false
+// for (let i=0;i<players.length;i++){
+//     if(players[i].name==nameofnewplayer){
+//     isreapeatedname = true;
+//    break;
+// }
+// }
+//      if (isreapeatedname){
+//     res.send("the name is already exist")
+// }else{
+// players.push(newplayer)
+// res.send( {data:players})
+// } 
+// })
+
+
+    let person =[{
+        name:"pk",
+        age:10,
+        votingstatus:false},
+        {
+            name:"rk",
+        age:30,
+        votingstatus:false
+        },
+        {
+            name:"sk",
+        age:8,
+        votingstatus:false
+        },
+        {
+            name:"mk",
+        age:45,
+        votingstatus:false
+        }]
+        router.post("/votingstatusperson", function(req, res){
+let votingage= req.query.age;
+let eligibleperson=[]
+for (let i=0;i<person.length;i++){
+     if(person[i].age> votingage){
+      person[i].votingstatus=true;
+        eligibleperson.push(person[i])
+    }
+  res.send({data:eligibleperson, status:true})
+
 }
-}
-     if (isreapeatedname){
-    res.send("the name is already exist")
-}else{
-players.push(newplayer)
-res.send( {data:players})
-} 
-})
+    
+});
+
+
+
+// router.post('/voting-post',function(req,res){
+//     let querypar=req.query.input;
+//     let finalarr=[]
+//     for(let i=0;i<peopleList.length;i++){
+
+//         let list=peopleList[i]
+//         if (list.age>=querypar){
+//            list.votingstatus=true
+
+//            finalarr.push(peopleList[i])
+          
+//         }
+//     }   
+//   res.send({data:finalarr,status:true})
+// })
+
+
+
 
 
 // router.post("/players", function(req, res) {
