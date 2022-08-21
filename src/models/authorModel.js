@@ -2,9 +2,9 @@
 const mongoose = require('mongoose');
 
 const authorSchema = new mongoose.Schema( {
-    authorName:String,
-		age:Number,
-		address:String,
+    authorName: String,
+		age: Number,
+		address: String,
 rating: Number
 
 

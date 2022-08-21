@@ -1,13 +1,22 @@
 
 const bookModel= require("../models/bookModel")
-// const PublisherModel= require("../models/publisherModel")
+const PublisherModel= require("../models/publisherModel")
 const AuthorModel= require("../models//authorModel")
 
 const createBook= async function (req, res) {
     let book = req.body
+let authorid = await AuthorModel.find( book.author_id)
+if ( author_id ==author_id  )
+
+    
     let bookCreated = await bookModel.create(book)
     res.send({data: bookCreated})
 }
+
+
+
+
+
 
 // const getBooksData= async function (req, res) {
 //     let books = await bookModel.find()
