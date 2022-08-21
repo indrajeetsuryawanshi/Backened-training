@@ -1,15 +1,15 @@
 const mongoose = require('mongoose');
 
 const bookSchema = new mongoose.Schema( {
-    name:"Two states",
-    author_id:1,
-    price:50,
-    ratings:4.5,
+    name:String,
+    author_id:Number,
+    price:Number,
+    ratings:Number,
 } ,
 
     
 { timestamps: true });
 
 
-module.exports = mongoose.model('Book', bookSchema) //books
+module.exports = mongoose.model('Bookk', bookSchema) //books
 
