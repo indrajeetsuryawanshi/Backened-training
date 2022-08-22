@@ -14,6 +14,9 @@ router.post("/createPublisher", publisherController.createPublisher  )
 router.post("/createBook", bookController.createBook  )
 
 
-// router.get("/getBooksWithAuthorDetails", bookController.getBooksWithAuthorDetails)
+router.get("/getbookwithauthorpublisher", bookController.getbookwithauthorpublisher)
+ 
+router.put("/ Newupdatebook",bookController.Newupdatebook)
+
 
 module.exports = router;
