@@ -41,6 +41,35 @@ const getUsersData= async function (req, res) {
     let allUsers= await UserModel.find()
     res.send({msg: allUsers})
 }
+// const creatobject=async function(req,res){
+
+// let 
+
+// let obj={
+//     "name":"sabiha",
+//     "city":"banglore",
+//     "address-pincode":"423201"
+// }
+// let out = obj.age=12
+// console.log (obj.name)
+// console.log(obj["city"])
+// req.headers["age"]=12
+// console.log(obj["address-pincode"])
+// // console.log(out)
+// // console.log(obj.address-pincode)   give error pincode is not define
+
+
+// }
+
+
+
+
+
+
+
+
+
+
 
 module.exports.createUser= createUser
 module.exports.getUsersData= getUsersData
