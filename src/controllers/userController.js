@@ -11,7 +11,7 @@ let user=req.body
 // if ( req.headers["isfreeappuser"] ){
 //     user.isfreeAppUser=true
 // }
-user.isFreeAppUser=req.user
+user.isFreeAppUser=req.headers["isfreeappuser"]
     let saveduser= await UserModel.create(user)
     res.send({msg: saveduser})
 }

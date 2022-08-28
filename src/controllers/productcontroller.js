@@ -1,5 +1,5 @@
 const { count } = require("console")
-const ProductModel = require("../models/productmodel")
+const ProductModel = require("../models/productModel")
 
 const createProduct= async function (req, res) {
     let product= req.body
