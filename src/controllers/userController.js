@@ -76,7 +76,7 @@ const updateUser = async function (req, res) {
   try{
   let userData = req.body;
   let updatedUser = await userModel.findOneAndUpdate({ _id: userId }, userData, {new: true});
-  res.status(404).send({ status: updatedUser, data: updatedUser });
+  res.status(201).send({ status: updatedUser, data: updatedUser });
   }
   catch (err){
     res.status(500).send({msg:"error",error: err.message})
@@ -91,7 +91,7 @@ const deleteUser = async function(req, res) {
       return res.status(404).send({status: false, message: "no such user exists"})
   }
   let updatedUser = await userModel.findOneAndUpdate({_id: userId}, {isDeleted: true}, {new: true})
-  res.status(404).send({status: true, data: updatedUser})
+  res.status(201).send({status: true, data: updatedUser})
 }
 catch (err){
   res.status(500).send({msg:"error", error: err.message})
