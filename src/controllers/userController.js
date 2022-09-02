@@ -24,13 +24,8 @@ try{
       status: false,
       msg: "username or the password is not correct",
     });
-  }
-    catch (err){
-      res.status(500).send({msg:"error", error:err.message})
-    }
-
-  try {
-let token = jwt.sign(
+ 
+     let token = jwt.sign(
     {
       userId: user._id.toString(),
       batch: "plutonium",
@@ -41,10 +36,12 @@ let token = jwt.sign(
   
   res.status(200).send({ status: true, data: token });
   }
-catch (err){
-  res.status(500).send({msg:"error",error: err.message})
+  catch(err){
+    res.status(500).send({msg:"error",error:err.message})
+  }
+
+
 }
-};
 
 
 const getUserData = async function (req, res) {
@@ -69,11 +66,8 @@ const updateUser = async function (req, res) {
   if (!user) {
     return res.status(404).send("No such user exists");
   }
-  }
-  catch (err){
-    res.status(500).send({msg:"error",error:err.message})
-  }
-  try{
+  
+  
   let userData = req.body;
   let updatedUser = await userModel.findOneAndUpdate({ _id: userId }, userData, {new: true});
   res.status(201).send({ status: updatedUser, data: updatedUser });
