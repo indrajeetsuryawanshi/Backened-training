@@ -1,0 +1,34 @@
+{
+  "name": "project-01",
+  "version": "1.0.0",
+  "description": "Plutonium",
+  "main": "index.js",
+  "scripts": {
+    "start": "node src/index.js",
+    "dev": "nodemon src/index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Love2Rizwan/Project-01.git"
+  },
+  "author": "",
+  "contributes": [
+    {
+      "name": " Debasish , Indrajeet, Prabhas Prasad ,Mohd Rizwan"
+    }
+  ],
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Love2Rizwan/Project-01/issues"
+  },
+  "homepage": "https://github.com/Love2Rizwan/Project-01#readme",
+  "dependencies": {
+    "body-parser": "^1.20.0",
+    "cors": "^2.8.5",
+    "express": "^4.18.1",
+    "mongoose": "^6.5.4"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.19"
+  }
+}
