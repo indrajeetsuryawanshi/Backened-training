@@ -12,11 +12,10 @@
     "url": "git+https://github.com/Love2Rizwan/Project-01.git"
   },
   "author": "",
-  "contributes": [
+  "contributes":
     {
       "name": " Debasish , Indrajeet, Prabhas Prasad ,Mohd Rizwan"
-    }
-  ],
+    },
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/Love2Rizwan/Project-01/issues"
