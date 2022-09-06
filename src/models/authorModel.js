@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 
-const authorSchema = new authorSchema.mongoose({
+const authorSchema = new mongoose.Schema({
 
     fname: {
         type: String,
@@ -13,7 +13,7 @@ const authorSchema = new authorSchema.mongoose({
     title: {
         type: String,
         required: true,
-        enum: [Mr, Mrs, Miss]
+        enum: ["Mr", "Mrs", "Miss"]
     },
     email: {
         type: String,
@@ -28,5 +28,5 @@ const authorSchema = new authorSchema.mongoose({
 
 );
 
-module.exports.authorSchema = mongoose.model('P-Author', 'authorSchema');
+module.exports= mongoose.model('P-Author', authorSchema);
 
