@@ -28,5 +28,5 @@ const authorSchema = new authorSchema.mongoose({
 
 );
 
-module.exports.authorSchema = mongoose.model('P-Author', 'authorSchema');
+module.exports.authorSchema = mongoose.model('P-Author', authorSchema);
 
