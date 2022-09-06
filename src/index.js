@@ -14,7 +14,7 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
 // Database connected
-mongoose.connect("mongodb+srv://prabhas:password123*@cluster0.j1kcoh4.mongodb.net/group57Database", {
+mongoose.connect("mongodb+srv://prabhas:Password1*@cluster0.j1kcoh4.mongodb.net/group57Database", {
           useNewUrlParser: true
 
 }).then(() => console.log("MongoDB Connected"))
