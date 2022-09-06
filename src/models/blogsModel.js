@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 
-const ObjectId = mongoose.Schema.Types.ObjectId
+//const ObjectId = mongoose.Schema.Types.ObjectId
 
 const blogsSchema = new blogsSchema.mongoose({
 
@@ -15,7 +15,7 @@ const blogsSchema = new blogsSchema.mongoose({
     authorId: {
         type: ObjectId,
         required: true,
-        ref: "P-Author"
+        //ref: "P-Author"
     },
     tags: [String],
     category: {
@@ -39,4 +39,4 @@ const blogsSchema = new blogsSchema.mongoose({
 
 )
 
-module.exports.blogsSchema = mongoose.model('P-Blogs', 'blogsSchema')
+module.exports.blogsSchema = mongoose.model('P-Blogs', blogsSchema)
