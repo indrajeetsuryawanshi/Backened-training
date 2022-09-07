@@ -1,9 +1,7 @@
-const mongoose = require('mongoose');
 
-//const ObjectId = mongoose.Schema.Types.ObjectId
-
-const blogsSchema = new blogsSchema.mongoose({
-
+const mongoose = require('mongoose')
+const objectId = mongoose.Schema.Types.ObjectId
+const blogSchema = new mongoose.Schema({
     title: {
         type: String,
         required: true
@@ -13,30 +11,31 @@ const blogsSchema = new blogsSchema.mongoose({
         required: true
     },
     authorId: {
-        type: ObjectId,
-        required: true,
-        //ref: "P-Author"
+        type: objectId,
+        ref: "PAuthor",
+        require: true
     },
     tags: [String],
+
     category: {
-        type: String,
+        type: [String],
         required: true
     },
     subcategory: [String],
+    deletedAt:{
+        type: Date
+    },
     isDeleted: {
         type: Boolean,
         default: false
     },
+    publishedAt: {
+        type: Date
+    },
     isPublished: {
         type: Boolean,
         default: false
-    }
-},
+    },
 
-    {
-        timestamps: true
-    }
-
-)
-
-module.exports.blogsSchema = mongoose.model('P-Blogs', blogsSchema)
+}, { timestamps: true });
+module.exports = mongoose.model('PBlog', blogSchema)
